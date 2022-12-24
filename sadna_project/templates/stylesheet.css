@@ -1,0 +1,29 @@
+
+.slider{
+    height: 620px;
+}
+.slider > .card{
+    width: 326px;
+    padding: 12px;
+    height: inherit;
+}
+.slider > .card > img{
+    width: 300px;
+    height: 444px;
+}
+
+.text-truncate-container {
+    width: inherit;
+}
+.text-truncate-container h4 {
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.text-truncate-container p {
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
