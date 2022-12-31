@@ -2,9 +2,9 @@ import mysql.connector
 import csv
 import json
 import os
-# TODO: hardcoded
+
 pathNetflixCSV = '../datasets/netflix_titles.csv' 
-pathPosterList = '../posters extractor/list.txt'
+pathPosterList = '../datasets/netflix_posters.txt'
 pathNamesTSV = '../datasets/name.basics.tsv'
 
 def insertCast():
@@ -123,7 +123,7 @@ def insertPersons():
 def insertShows():
     posters = {}
     # reading the data from the file
-    if os.path.isfile(pathPosterList): # TODO: hardcoded!
+    if os.path.isfile(pathPosterList):
         with open(pathPosterList,) as f: 
             data = f.read()
             posters = json.loads(data)

@@ -1,0 +1,3 @@
+# filter everything in this directory.
+*.tsv
+*.csv

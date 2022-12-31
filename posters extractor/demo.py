@@ -7,12 +7,16 @@ import sys
 # script is crawrling the api with given netflix dataset titles, with api key.
 
 limiter = 1000 # Default value (also the daliy limit of API).
-pathNetflixCSV = '/Users/daniel/Downloads/netflix_titles.csv'  # TODO: hardcoded!
-apikey = 'c25cad6d' # Requested and receive from OMDb API.  # TODO: hardcoded!
+pathNetflixCSV = '../datasets/netflix_titles.csv'
+pathSavedList = '../datasets/netflix_posters.txt'
+apikey = None # Requested and receive from OMDb API.
+if os.path.isfile('key'):
+    with open('key',) as f:
+        data = f.read()
+        apikey = data
+if apikey is None:
+    print('Not key found, make sure there is "key" file with your API key in it.')
 
-# TODO: adds args support, to get file paths and settings.
-#       Right now, only can recieve single number for limiter.
-#       Ask user for: apikey, path to csv, path where we will save crawled data, limit size
 args = sys.argv[1:]
 if len(args) > 0:
     limiter = int(args[0])
@@ -20,8 +24,8 @@ if len(args) > 0:
 print("Start loading saved dictonary from past runs.")
 dictonary = {}
 # reading the data from the file
-if os.path.isfile('list.txt'): # TODO: hardcoded!
-    with open('list.txt',) as f: 
+if os.path.isfile(pathSavedList):
+    with open(pathSavedList,) as f: 
         data = f.read()
         dictonary = json.loads(data)
 
@@ -76,7 +80,7 @@ with open(pathNetflixCSV, newline='') as csvfile:
             line_count += 1
 print("Done running on csv file, start saving to file")
 # Finish running, start saving.
-with open('list.txt', 'w') as convert_file:  # TODO: hardcoded!
+with open(pathSavedList, 'w') as convert_file:
      convert_file.write(json.dumps(dictonary))
 # line_count skip on the first line, so actual lines added are total - 1.
 print('Done saving, added %d new shows to dictonary.' %(line_count-1))
