@@ -1,0 +1,62 @@
+### Index page
+## Get shows of given year (=2021)
+## (not sure how to get something popular, we could maybe do something with reviews or users list?)
+SELECT DISTINCT *
+FROM MyNetflixList.Shows
+WHERE ReleaseYear = '2021';
+
+## Get shows of given year (=2021), and country(=51, Israel)
+SELECT DISTINCT s.Id, s.Title, c.Name, s.Description, s.Poster, s.ReleaseYear
+FROM MyNetflixList.Shows AS s JOIN MyNetflixList.Countries AS c ON s.CountryID = c.Id
+WHERE c.Id = 51
+ORDER BY ReleaseYear DESC;
+
+### Searching
+## Get shows with title or description with given string query (='Ninja')
+## Notice: you need to add to table an index with (Title, Description) as FULLTEXT index, so you can MATCH AGAINST.
+SELECT * 
+FROM MyNetflixList.Shows 
+WHERE MATCH (Title, Description) 
+AGAINST ('Ninja')
+ORDER BY Title ASC;
+# Another example:
+SELECT * 
+FROM MyNetflixList.Shows 
+WHERE MATCH (Title, Description) 
+AGAINST ('Ninja Apple Car')
+ORDER BY Title ASC;
+
+### Show page
+## Get all cast members info for given showID (=1 in example)
+SELECT DISTINCT *
+FROM MyNetflixList.Persons
+WHERE Id = ANY
+(SELECT DISTINCT PersonID
+FROM MyNetflixList.Cast
+WHERE ShowID = 1);
+
+## Get all reviews for given ShowID (=1 in example)
+SELECT DISTINCT *
+FROM MyNetflixList.Reviews
+WHERE ShowID = 1
+
+### Cast page
+## Get all shows info for given PersonID (=12345 in example)
+SELECT DISTINCT *
+FROM MyNetflixList.Shows
+WHERE Id = ANY
+(SELECT DISTINCT ShowID
+FROM MyNetflixList.Cast
+WHERE PersonID = 12345);
+
+### User page
+## Get all shows in user's list for given Username (='abc').
+SELECT DISTINCT s.Id, s.Title, s.Poster, ss.StatusType
+FROM MyNetflixList.ShowStatus AS ss JOIN MyNetflixList.Shows AS s
+ON ss.ShowID = s.Id
+WHERE Username LIKE 'abc'
+
+## Get all wall posts for given Username (='abc')
+SELECT DISTINCT *
+FROM MyNetflixList.Comments AS c
+WHERE c.UsernameWall LIKE 'abc'
