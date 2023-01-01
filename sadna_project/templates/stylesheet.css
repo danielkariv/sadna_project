@@ -1,4 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap');
+html body {
+    background-color: rgb(7, 6, 6);
 
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+h1 ,h2 ,h3 ,h4 ,h5 ,h6{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+.navbar{
+    background-color: #111111;
+}
+.red-button, .red-button:hover, .red-button:active, .red-button:visited{
+    background-color: #e50914 !important;
+    border-color: #000000;
+}
+.navbar .btn-secondary{
+    background-color: #222222;
+}
+.navbar-brand{
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 400;
+    font-size: 32px;
+    padding: 0px;
+    color: red
+}
 .slider{
     height: 620px;
 }
@@ -27,3 +56,11 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+.panel{
+    background-color: #111111;
+    margin-top: 4rem;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+

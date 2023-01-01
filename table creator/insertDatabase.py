@@ -159,7 +159,7 @@ def insertShows():
             Description = row[11]
             # Poster
             Poster = posters.get(Title)
-            # TODO: add support for IMDbRating, IMDbVotes
+            # Fix title encoding.
             Title = Title.encode('utf-8', 'ignore')
             Title = Title.decode('utf-8', 'ignore')
             # add show to list
@@ -226,44 +226,6 @@ def insertCountries():
     else:
         print("Database closed!")
 
-
-def insertCountries():
-    ''' Finds all unique countries and try to insert them to database.'''
-    countries = set()
-    # extract list of all countries.
-    with open(pathNetflixCSV, newline='') as csvfile:
-        reader = csv.reader(csvfile) # ,delimiter=',', quotechar='|'
-        for row in reader:
-            break
-        for row in reader:
-            cstring = row[5]
-            clist = cstring.split(",")
-            for c in clist:
-                c = c.strip()
-                if len(c) > 0:
-                    countries.add((c,))
-    # sort and shows length and data.
-    countries = sorted(countries)
-    print(sorted(countries))
-    print(len(countries))
-
-    # Info to connect to MySQL database.
-    mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    database="MyNetflixList",
-    )
-
-    if not mydb.is_closed():
-        mycursor = mydb.cursor()
-        sql = "INSERT INTO Countries (Name) VALUES (%s)"
-        mycursor.executemany(sql, countries)
-
-        mydb.commit()
-
-        print(mycursor.rowcount, "record inserted.")
-    else:
-        print("Database closed!")
 # NOTE: run each function one by one, to make sure nothing crashing while running.
 # insert countries -> shows -> people -> relation between people.
 #insertCountries()

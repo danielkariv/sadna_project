@@ -1,5 +1,4 @@
-
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,28 +9,27 @@
     </head>
     <body>
         <!-- header -->
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar">
             <div class="col-4">
                 <a class="navbar-brand" href="#">My Netflix List</a>
             </div>
             <div class="col-4">
-                <form class="form-inline" action="/search" accept-charset="UTF-8" method="get">
+                <form class="form-inline" style="margin:0px" action="/search" accept-charset="UTF-8" method="get">
                     <div class="input-group flex-fill">
                         <input type="search" name="search" id="search" value="" placeholder="" class="form-control" aria-label="Search this site">
                         <div class="input-group-append">
-                            <input type="submit" name="commit" value="Search" class="btn btn-primary" data-disable-with="Search">
+                            <input type="submit" name="commit" value="Search" class="btn red-button btn-primary" data-disable-with="Search">
                         </div>
                     </div>
                 </form>
             </div>
             <div class="col-4 d-flex justify-content-end">
-                <button type="button" class="btn btn-primary">Login</button>
+                <button type="button" class="btn red-button btn-primary">Login</button>
                 <button type="button" class="btn btn-secondary">Sign-up</button>
             </div>
-            
         </nav>
         <!-- container for content-->
-        <div class="container-fluid">
+        <div class="container panel">
             <div class="container">
                 <h1>Popular Shows of 2022</h1>
                 <div class="slider row flex-row flex-nowrap align-items-start" style="overflow-x: auto;">
