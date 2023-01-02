@@ -30,35 +30,38 @@
 		   if ( !empty($name) && !empty($password) )
 		   {
 			   $_SESSION['username']= $name;
+			    header("Location: /sadna_project/index.php");
+               die();
 			   
 		   }
 	  }		  
 ?>
-   <div class="container">
+   <div class="container panel col-4">
   <form role="form" method="post" >
-   <div class="row">
-   <div class="col-2">
-     User Name
-	 </div>
-<div class="col-9">
-<input type="text"  id="inputUser" name="user" placeholder="Username">
-          <?php echo $errName; ?>
-   </div>
-   </div>
-   <div class="row">
-   <div class="col-2">
-   Password
-   </div>
-<div class="col-9">
-<input type="password"  id="inputPassword" name="password" placeholder="Password">
-          <?php echo $errPass; ?>
-   </div>
-   </div>
-   <div class="row">
-   <div class="offset-2 col-9">
-<input type="submit" value="Log in" name="submit" class="btn btn-primary"/>
-   </div>
-   </div>
+   
+  
+  <!-- Username input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="username">Username</label>
+                    <input type="text" id="username" name="user" class="form-control" />
+					<?php echo  $errName ;?>
+                </div>
+              
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" />
+					<?php echo  $errPass ;?>
+                </div>
+              
+                <!-- Submit button -->
+                <input type="submit" name="submit" class="btn red-button btn-primary btn-block mb-4" value="Sign in"/>
+              
+                <!-- Register buttons -->
+                <div class="text-center">
+                  <p>Not a member? <a href="#!">Sign Up</a></p>
+                </div>
+   
    
    </form>
    
