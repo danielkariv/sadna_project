@@ -40,6 +40,8 @@
             
         } else{
             // echo "empty";
+            // TODO: it crash in some cases, like 'Showname=The Women' for the show "The Women's Balcony".
+            //      Switch to showID instead of showname. we can place them in the links.
         }
         $conn->close(); 
     } else{
@@ -53,10 +55,8 @@
 <head>
 </head>
 <body>
-<?php 
-   
+    <?php 
    include 'header.php';
-   
    ?>
     <!-- container for content-->
         <div class="container panel">
