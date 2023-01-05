@@ -39,11 +39,11 @@
                                 <h4>". $row['Title'] ."</h4>
                                 <p class='card-text'>".$row['Description']."</p>
                             </div>
-                            <a href='". "sadna_project/Show.php?". $row['Title'] ."' class='stretched-link'></a>
+                            <a href='". "Show.php?Showname=". $row['Title'] ."' class='stretched-link'></a>
                             </div>";
                         }
                     } else{
-                        echo "empty";
+                        // echo "empty";
                     }
                     $conn->close(); 
                 ?>
@@ -86,11 +86,11 @@
                                 <h4>". $row['Title'] ."</h4>
                                 <p class='card-text'>".$row['Description']."</p>
                             </div>
-                            <a href='". "sadna_project/Show.php?". $row['Title'] ."' class='stretched-link'></a>
+                            <a href='". "Show.php?Showname=". $row['Title'] ."' class='stretched-link'></a>
                             </div>";
                         }
                     } else{
-                        echo "empty";
+                        // echo "empty";
                     }
                     $conn->close(); 
                 ?>
@@ -131,11 +131,11 @@
                                 <h4>". $row['Title'] ."</h4>
                                 <p class='card-text'>".$row['Description']."</p>
                             </div>
-                            <a href='". "sadna_project/Show.php?". $row['Title'] ."' class='stretched-link'></a>
+                            <a href='". "Show.php?Showname=". $row['Title'] ."' class='stretched-link'></a>
                             </div>";
                         }
                     } else{
-                        echo "empty";
+                        // echo "empty";
                     }
                     $conn->close(); 
                 ?>
