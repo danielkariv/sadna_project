@@ -1,221 +1,145 @@
-<?php  
-
-?>
-
 <html>
-<head>
-</head>
-<body>
-<?php include_once 'header.php' ?>
-   
-   
+    <head>
+    </head>
+    <body>
+    <?php include_once 'header.php' ?>
         <!-- container for content-->
         <div class="container panel">
-            <div class="container">
-                <h1>Popular Shows of 2022</h1>
-                <div class="slider row flex-row flex-nowrap align-items-start" style="overflow-x: auto;">
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BODc1NGMwNGQtNjlmMy00OGQ5LWJhNmItZTQyMTA4MjcyM2U1XkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>Narcos: Mexico</h4>
-                            <p class="card-text">Witness the birth of the Mexican drug war in the 1980s as a gritty new "Narcos" saga chronicles the true story of the Guadalajara cartel's ascent.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMjAzMjU2MjYzMl5BMl5BanBnXkFtZTgwNTQ4Nzk1NjM@._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>Castlevania</h4>
-                            <p class="card-text">A vampire hunter fights to save a besieged city from an army of otherworldly beasts controlled by Dracula himself. Inspired by the classic video games.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BY2ViMDQ3NDgtNjFkNy00ZTUzLThmMDYtYTMzY2IyZmYwNWJmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>The Witcher: Nightmare of the Wolf</h4>
-                            <p class="card-text">Escaping from poverty to become a witcher, Vesemir slays monsters for coin and glory, but when a new menace rises, he must face the demons of his past.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BODc1NGMwNGQtNjlmMy00OGQ5LWJhNmItZTQyMTA4MjcyM2U1XkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>Narcos: Mexico</h4>
-                            <p class="card-text">Witness the birth of the Mexican drug war in the 1980s as a gritty new "Narcos" saga chronicles the true story of the Guadalajara cartel's ascent.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMjAzMjU2MjYzMl5BMl5BanBnXkFtZTgwNTQ4Nzk1NjM@._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>Castlevania</h4>
-                            <p class="card-text">A vampire hunter fights to save a besieged city from an army of otherworldly beasts controlled by Dracula himself. Inspired by the classic video games.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BY2ViMDQ3NDgtNjFkNy00ZTUzLThmMDYtYTMzY2IyZmYwNWJmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>The Witcher: Nightmare of the Wolf</h4>
-                            <p class="card-text">Escaping from poverty to become a witcher, Vesemir slays monsters for coin and glory, but when a new menace rises, he must face the demons of his past.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BODc1NGMwNGQtNjlmMy00OGQ5LWJhNmItZTQyMTA4MjcyM2U1XkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>Narcos: Mexico</h4>
-                            <p class="card-text">Witness the birth of the Mexican drug war in the 1980s as a gritty new "Narcos" saga chronicles the true story of the Guadalajara cartel's ascent.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMjAzMjU2MjYzMl5BMl5BanBnXkFtZTgwNTQ4Nzk1NjM@._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>Castlevania</h4>
-                            <p class="card-text">A vampire hunter fights to save a besieged city from an army of otherworldly beasts controlled by Dracula himself. Inspired by the classic video games.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BY2ViMDQ3NDgtNjFkNy00ZTUzLThmMDYtYTMzY2IyZmYwNWJmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>The Witcher: Nightmare of the Wolf</h4>
-                            <p class="card-text">Escaping from poverty to become a witcher, Vesemir slays monsters for coin and glory, but when a new menace rises, he must face the demons of his past.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BODc1NGMwNGQtNjlmMy00OGQ5LWJhNmItZTQyMTA4MjcyM2U1XkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>Narcos: Mexico</h4>
-                            <p class="card-text">Witness the birth of the Mexican drug war in the 1980s as a gritty new "Narcos" saga chronicles the true story of the Guadalajara cartel's ascent.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMjAzMjU2MjYzMl5BMl5BanBnXkFtZTgwNTQ4Nzk1NjM@._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>Castlevania</h4>
-                            <p class="card-text">A vampire hunter fights to save a besieged city from an army of otherworldly beasts controlled by Dracula himself. Inspired by the classic video games.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BY2ViMDQ3NDgtNjFkNy00ZTUzLThmMDYtYTMzY2IyZmYwNWJmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>The Witcher: Nightmare of the Wolf</h4>
-                            <p class="card-text">Escaping from poverty to become a witcher, Vesemir slays monsters for coin and glory, but when a new menace rises, he must face the demons of his past.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                </div>
-            </div>
             <!--- Popular shows slider-->
-            
-            <!--- Fantasy Genre-->
             <div class="container">
-                <h1>Lastest Shows From Israel</h1>
+                <h1>2021 Movies</h1>
                 <div class="slider row flex-row flex-nowrap align-items-start" style="overflow-x: auto;">
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BODc1NGMwNGQtNjlmMy00OGQ5LWJhNmItZTQyMTA4MjcyM2U1XkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>Narcos: Mexico</h4>
-                            <p class="card-text">Witness the birth of the Mexican drug war in the 1980s as a gritty new "Narcos" saga chronicles the true story of the Guadalajara cartel's ascent.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMjAzMjU2MjYzMl5BMl5BanBnXkFtZTgwNTQ4Nzk1NjM@._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>Castlevania</h4>
-                            <p class="card-text">A vampire hunter fights to save a besieged city from an army of otherworldly beasts controlled by Dracula himself. Inspired by the classic video games.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BY2ViMDQ3NDgtNjFkNy00ZTUzLThmMDYtYTMzY2IyZmYwNWJmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>The Witcher: Nightmare of the Wolf</h4>
-                            <p class="card-text">Escaping from poverty to become a witcher, Vesemir slays monsters for coin and glory, but when a new menace rises, he must face the demons of his past.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BODc1NGMwNGQtNjlmMy00OGQ5LWJhNmItZTQyMTA4MjcyM2U1XkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>Narcos: Mexico</h4>
-                            <p class="card-text">Witness the birth of the Mexican drug war in the 1980s as a gritty new "Narcos" saga chronicles the true story of the Guadalajara cartel's ascent.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMjAzMjU2MjYzMl5BMl5BanBnXkFtZTgwNTQ4Nzk1NjM@._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>Castlevania</h4>
-                            <p class="card-text">A vampire hunter fights to save a besieged city from an army of otherworldly beasts controlled by Dracula himself. Inspired by the classic video games.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BY2ViMDQ3NDgtNjFkNy00ZTUzLThmMDYtYTMzY2IyZmYwNWJmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>The Witcher: Nightmare of the Wolf</h4>
-                            <p class="card-text">Escaping from poverty to become a witcher, Vesemir slays monsters for coin and glory, but when a new menace rises, he must face the demons of his past.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BODc1NGMwNGQtNjlmMy00OGQ5LWJhNmItZTQyMTA4MjcyM2U1XkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>Narcos: Mexico</h4>
-                            <p class="card-text">Witness the birth of the Mexican drug war in the 1980s as a gritty new "Narcos" saga chronicles the true story of the Guadalajara cartel's ascent.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMjAzMjU2MjYzMl5BMl5BanBnXkFtZTgwNTQ4Nzk1NjM@._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>Castlevania</h4>
-                            <p class="card-text">A vampire hunter fights to save a besieged city from an army of otherworldly beasts controlled by Dracula himself. Inspired by the classic video games.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BY2ViMDQ3NDgtNjFkNy00ZTUzLThmMDYtYTMzY2IyZmYwNWJmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>The Witcher: Nightmare of the Wolf</h4>
-                            <p class="card-text">Escaping from poverty to become a witcher, Vesemir slays monsters for coin and glory, but when a new menace rises, he must face the demons of his past.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BODc1NGMwNGQtNjlmMy00OGQ5LWJhNmItZTQyMTA4MjcyM2U1XkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>Narcos: Mexico</h4>
-                            <p class="card-text">Witness the birth of the Mexican drug war in the 1980s as a gritty new "Narcos" saga chronicles the true story of the Guadalajara cartel's ascent.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMjAzMjU2MjYzMl5BMl5BanBnXkFtZTgwNTQ4Nzk1NjM@._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>Castlevania</h4>
-                            <p class="card-text">A vampire hunter fights to save a besieged city from an army of otherworldly beasts controlled by Dracula himself. Inspired by the classic video games.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/M/MV5BY2ViMDQ3NDgtNjFkNy00ZTUzLThmMDYtYTMzY2IyZmYwNWJmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_SX300.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-truncate-container">
-                            <h4>The Witcher: Nightmare of the Wolf</h4>
-                            <p class="card-text">Escaping from poverty to become a witcher, Vesemir slays monsters for coin and glory, but when a new menace rises, he must face the demons of his past.</p>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
+                <?php 
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $dbname = "MyNetflixList";
+                    // Create connection
+                    $conn = new mysqli($servername, $username, $password);
+
+                    // Check connection
+                    if (mysqli_connect_error()) {
+                        // TODO: redirect to 502 page? or do that it can't load anything?
+                        die("Database connection failed: " . mysqli_connect_error());
+                    }
+                    # echo "Connected successfully";
+                    // Try to query first slider data
+                    $sql = "SELECT DISTINCT *
+                            FROM MyNetflixList.Shows
+                            WHERE ReleaseYear = '2021' AND isMovie = True
+                            LIMIT 10;";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0){
+                        while($row = $result->fetch_assoc()){
+                            $poster = ($row['Poster'] == NULL)? "public/no-poster.png" : $row['Poster'];
+                            //echo "Test" . $row['Title'];
+                            echo "<div class='card'>
+                            <img src='". $poster ."' class='card-img-top' alt='Poster of ". $row['Title'] . "'>
+                            <div class='card-body text-truncate-container'>
+                                <h4>". $row['Title'] ."</h4>
+                                <p class='card-text'>".$row['Description']."</p>
+                            </div>
+                            <a href='". "sadna_project/Show.php?". $row['Title'] ."' class='stretched-link'></a>
+                            </div>";
+                        }
+                    } else{
+                        echo "empty";
+                    }
+                    $conn->close(); 
+                ?>
                 </div>
             </div>
-   
-</body>
+            
+            
+            <!--- Israel Lastest TV shows-->
+            <div class="container">
+                <h1>Lastest TV Shows From Israel</h1>
+                <div class="slider row flex-row flex-nowrap align-items-start" style="overflow-x: auto;">
+                <?php 
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $dbname = "MyNetflixList";
+                    // Create connection
+                    $conn = new mysqli($servername, $username, $password);
+
+                    // Check connection
+                    if (mysqli_connect_error()) {
+                        // TODO: redirect to 502 page? or do that it can't load anything?
+                        die("Database connection failed: " . mysqli_connect_error());
+                    }
+                    # echo "Connected successfully";
+                    // Try to query first slider data
+                    $sql = "SELECT DISTINCT s.Id, s.Title, c.Name, s.Description, s.Poster, s.ReleaseYear
+                            FROM MyNetflixList.Shows AS s JOIN MyNetflixList.Countries AS c ON s.CountryID = c.Id
+                            WHERE c.Name = 'Israel' AND s.isMovie = False
+                            ORDER BY ReleaseYear DESC
+                            LIMIT 10;";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0){
+                        while($row = $result->fetch_assoc()){
+                            $poster = ($row['Poster'] == NULL)? "public/no-poster.png" : $row['Poster'];
+                            //echo "Test" . $row['Title'];
+                            echo "<div class='card'>
+                            <img src='". $poster ."' class='card-img-top' alt='Poster of ". $row['Title'] . "'>
+                            <div class='card-body text-truncate-container'>
+                                <h4>". $row['Title'] ."</h4>
+                                <p class='card-text'>".$row['Description']."</p>
+                            </div>
+                            <a href='". "sadna_project/Show.php?". $row['Title'] ."' class='stretched-link'></a>
+                            </div>";
+                        }
+                    } else{
+                        echo "empty";
+                    }
+                    $conn->close(); 
+                ?>
+            </div>
+        </div>
+        <!--- Israel Lastest Movies-->
+        <div class="container">
+                <h1>Lastest Movies From Israel</h1>
+                <div class="slider row flex-row flex-nowrap align-items-start" style="overflow-x: auto;">
+                <?php 
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $dbname = "MyNetflixList";
+                    // Create connection
+                    $conn = new mysqli($servername, $username, $password);
+
+                    // Check connection
+                    if (mysqli_connect_error()) {
+                        // TODO: redirect to 502 page? or do that it can't load anything?
+                        die("Database connection failed: " . mysqli_connect_error());
+                    }
+                    # echo "Connected successfully";
+                    // Try to query first slider data
+                    $sql = "SELECT DISTINCT s.Id, s.Title, c.Name, s.Description, s.Poster, s.ReleaseYear
+                            FROM MyNetflixList.Shows AS s JOIN MyNetflixList.Countries AS c ON s.CountryID = c.Id
+                            WHERE c.Name = 'Israel' AND s.isMovie = True
+                            ORDER BY ReleaseYear DESC
+                            LIMIT 10;";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0){
+                        while($row = $result->fetch_assoc()){
+                            $poster = ($row['Poster'] == NULL)? "public/no-poster.png" : $row['Poster'];
+                            //echo "Test" . $row['Title'];
+                            echo "<div class='card'>
+                            <img src='". $poster ."' class='card-img-top' alt='Poster of ". $row['Title'] . "'>
+                            <div class='card-body text-truncate-container'>
+                                <h4>". $row['Title'] ."</h4>
+                                <p class='card-text'>".$row['Description']."</p>
+                            </div>
+                            <a href='". "sadna_project/Show.php?". $row['Title'] ."' class='stretched-link'></a>
+                            </div>";
+                        }
+                    } else{
+                        echo "empty";
+                    }
+                    $conn->close(); 
+                ?>
+            </div>
+        </div>
+    </body>
 </html> 
