@@ -1,5 +1,5 @@
 <?php  
-    if (isset ($_GET['Showname']))
+    if (isset ($_GET['Id']))
     {
         $servername = "localhost";
         $username = "root";
@@ -17,7 +17,7 @@
         // Try to query first slider data
         $sql = "SELECT DISTINCT *
                 FROM MyNetflixList.Shows as s
-                WHERE Title = '". $_GET['Showname'] ."';";
+                WHERE Id = '". $_GET['Id'] ."';";
         $result = $conn->query($sql);
         if ($result->num_rows > 0){
             $row = $result->fetch_assoc();
@@ -39,6 +39,9 @@
             $poster = ($row['Poster'] == NULL)? "public/no-poster.png" : $row['Poster'];
             
         } else{
+            header("Status: 301 Moved Permanently");
+            header("Location: /sadna_project/index.php");  
+            exit;
             // echo "empty";
             // TODO: it crash in some cases, like 'Showname=The Women' for the show "The Women's Balcony".
             //      Switch to showID instead of showname. we can place them in the links.
@@ -101,7 +104,7 @@
                         if ($result->num_rows > 0){
                             while($row = $result->fetch_assoc()){
                                 //echo "Test" . $row['Title'];
-                                echo "<li class='list-group-item'><a href='". "Cast.php?Name=". $row['Name']."'>".$row['Name']."</a></li>";
+                                echo "<li class='list-group-item'><a href='". "Cast.php?Id=". $row['Id']."'>".$row['Name']."</a></li>";
                             }
                         } else{
                             // echo "empty";

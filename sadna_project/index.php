@@ -39,7 +39,7 @@
                                 <h4>". $row['Title'] ."</h4>
                                 <p class='card-text'>".$row['Description']."</p>
                             </div>
-                            <a href='". "Show.php?Showname=". $row['Title'] ."' class='stretched-link'></a>
+                            <a href='". "Show.php?Id=". $row['Id'] ."' class='stretched-link'></a>
                             </div>";
                         }
                     } else{
@@ -86,7 +86,7 @@
                                 <h4>". $row['Title'] ."</h4>
                                 <p class='card-text'>".$row['Description']."</p>
                             </div>
-                            <a href='". "Show.php?Showname=". $row['Title'] ."' class='stretched-link'></a>
+                            <a href='". "Show.php?Id=". $row['Id'] ."' class='stretched-link'></a>
                             </div>";
                         }
                     } else{
@@ -131,7 +131,7 @@
                                 <h4>". $row['Title'] ."</h4>
                                 <p class='card-text'>".$row['Description']."</p>
                             </div>
-                            <a href='". "Show.php?Showname=". $row['Title'] ."' class='stretched-link'></a>
+                            <a href='". "Show.php?Id=". $row['Id'] ."' class='stretched-link'></a>
                             </div>";
                         }
                     } else{
