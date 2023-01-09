@@ -1,6 +1,10 @@
 <?php  
     session_start();
+<<<<<<< HEAD
     include_once "sqlconfig.php";
+=======
+    
+>>>>>>> b1abb2744d04b4690ba5d654a74c95a0186ed357
     if (isset ($_GET['commit']))
     {
         if (isset ($_GET['search']) && !empty($_GET['search'])
