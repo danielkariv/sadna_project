@@ -17,7 +17,7 @@
     if (isset ($_GET['searchtype']) &&$_GET["searchtype"]== "Netflix")
    {
 	    header("Status: 301 Moved Permanently");
-		  $getsvar="?Showname=".$_GET['searchthis'];
+		  $getsvar="?Id=".$_GET['searchthis'];
 		 header("Location: /sadna_project/Show.php" . $getsvar );  
 		 exit;
    }
