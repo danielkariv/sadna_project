@@ -10,21 +10,14 @@
                 <h1>2021 Movies</h1>
                 <div class="slider row flex-row flex-nowrap align-items-start" style="overflow-x: auto;">
                 <?php 
-<<<<<<< HEAD
+
                   //  $servername = "localhost";
                    // $username = "root";
                   //  $password = "";
                   //  $dbname = "MyNetflixList";
                     // Create connection
                  //   $conn = new mysqli($servername, $username, $password);
-=======
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $dbname = "MyNetflixList";
-                    // Create connection
-                    $conn = new mysqli($servername, $username, $password);
->>>>>>> b1abb2744d04b4690ba5d654a74c95a0186ed357
+
 
                     // Check connection
                     if (mysqli_connect_error()) {

@@ -30,21 +30,14 @@
     if ( !empty($name) && !empty($password) )
     {
       // We got username and password, try to login.
-<<<<<<< HEAD
+
     //  $servername = "localhost";
      // $username = "root";
      // $password = "";
      // $dbname = "MyNetflixList";
       // Create connection
      // $conn = new mysqli($servername, $username, $password);
-=======
-      $servername = "localhost";
-      $username = "root";
-      $password = "";
-      $dbname = "MyNetflixList";
-      // Create connection
-      $conn = new mysqli($servername, $username, $password);
->>>>>>> b1abb2744d04b4690ba5d654a74c95a0186ed357
+
 
       // Check connection
       if (mysqli_connect_error()) {
@@ -61,11 +54,9 @@
         $row = $result->fetch_assoc();
         $_SESSION['username']= $row['Username'];
         $_SESSION['accountName']= $row['AccountName'];
-<<<<<<< HEAD
+
        // $conn->close(); 
-=======
-        $conn->close(); 
->>>>>>> b1abb2744d04b4690ba5d654a74c95a0186ed357
+
         header("Location: /sadna_project/index.php");
         die();
       }

@@ -48,21 +48,14 @@
         if ( !empty($username) && !empty($password) && $password == $confpassword && !empty($accountName) )
         {
             // We got username and password, try to login.
-<<<<<<< HEAD
+
           //  $db_servername = "localhost";
           //  $db_username = "root";
            // $db_password = "";
            // $dbname = "MyNetflixList";
             // Create connection
           //  $conn = new mysqli($db_servername, $db_username, $db_password, $dbname);
-=======
-            $db_servername = "localhost";
-            $db_username = "root";
-            $db_password = "";
-            $dbname = "MyNetflixList";
-            // Create connection
-            $conn = new mysqli($db_servername, $db_username, $db_password, $dbname);
->>>>>>> b1abb2744d04b4690ba5d654a74c95a0186ed357
+
 
             // Check connection
             if (mysqli_connect_error()) {
@@ -71,23 +64,18 @@
             }
             # echo "Connected successfully";
             // Try to query first slider data
-<<<<<<< HEAD
+
             $sql = "INSERT INTO MyNetflixList.Users (Username, Password, AccountName, RegisterDate, LastOnline)
                     VALUES ('". $username ."','". $password ."','". $accountName . "', now(),now());";
 				//echo $sql;
-=======
-            $sql = "INSERT INTO Users (Username, Password, AccountName, RegisterDate, LastOnline)
-                    VALUES ('". $username ."','". $password ."','". $accountName . "', now(),now());";
->>>>>>> b1abb2744d04b4690ba5d654a74c95a0186ed357
+
             try {
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
                     header("Location: /sadna_project/index.php");
-<<<<<<< HEAD
+
                    // $conn->close();
-=======
-                    $conn->close();
->>>>>>> b1abb2744d04b4690ba5d654a74c95a0186ed357
+
                     die();
                 } else {
                     $errRegister = "Failed to register, Error:" . $conn->error;

@@ -1,5 +1,5 @@
 <?php  
-<<<<<<< HEAD
+
 
      include 'header.php';
     if (isset ($_GET['Id']))
@@ -10,16 +10,7 @@
       //  $dbname = "MyNetflixList";
         // Create connection
        // $conn = new mysqli($servername, $username, $password);
-=======
-    if (isset ($_GET['Id']))
-    {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "MyNetflixList";
-        // Create connection
-        $conn = new mysqli($servername, $username, $password);
->>>>>>> b1abb2744d04b4690ba5d654a74c95a0186ed357
+
 
         // Check connection
         if (mysqli_connect_error()) {
@@ -59,11 +50,9 @@
             // TODO: it crash in some cases, like 'Showname=The Women' for the show "The Women's Balcony".
             //      Switch to showID instead of showname. we can place them in the links.
         }
-<<<<<<< HEAD
+
        // $conn->close(); 
-=======
-        $conn->close(); 
->>>>>>> b1abb2744d04b4690ba5d654a74c95a0186ed357
+
     } else{
         header("Status: 301 Moved Permanently");
         header("Location: /sadna_project/index.php");  
@@ -76,11 +65,9 @@
 </head>
 <body>
     <?php 
-<<<<<<< HEAD
+
  
-=======
-   include 'header.php';
->>>>>>> b1abb2744d04b4690ba5d654a74c95a0186ed357
+
    ?>
     <!-- container for content-->
         <div class="container panel">
@@ -101,21 +88,14 @@
                     <h3>Cast:</h3>
                     <ul class="list-group">
                     <?php 
-<<<<<<< HEAD
+
                       //  $servername = "localhost";
                       //  $username = "root";
                       //  $password = "";
                        // $dbname = "MyNetflixList";
                         // Create connection
                      //   $conn = new mysqli($servername, $username, $password);
-=======
-                        $servername = "localhost";
-                        $username = "root";
-                        $password = "";
-                        $dbname = "MyNetflixList";
-                        // Create connection
-                        $conn = new mysqli($servername, $username, $password);
->>>>>>> b1abb2744d04b4690ba5d654a74c95a0186ed357
+
 
                         // Check connection
                         if (mysqli_connect_error()) {
@@ -124,38 +104,28 @@
                         }
                         # echo "Connected successfully";
                         // Try to query first slider data
-<<<<<<< HEAD
+
                         $sql2 = "SELECT DISTINCT *
-=======
-                        $sql = "SELECT DISTINCT *
->>>>>>> b1abb2744d04b4690ba5d654a74c95a0186ed357
+
                                 FROM MyNetflixList.Persons
                                 WHERE Id = ANY
                                 (SELECT DISTINCT PersonID
                                 FROM MyNetflixList.Cast
                                 WHERE ShowID = " . $showId. ");";
-<<<<<<< HEAD
+
                         $result2 = $conn->query($sql2);
                         if ($result2->num_rows > 0){
                             while($row2 = $result2->fetch_assoc()){
                                 //echo "Test" . $row['Title'];
                                 echo "<li class='list-group-item'><a href='". "Cast.php?Id=". $row2['Id']."'>".$row2['Name']."</a></li>";
-=======
-                        $result = $conn->query($sql);
-                        if ($result->num_rows > 0){
-                            while($row = $result->fetch_assoc()){
-                                //echo "Test" . $row['Title'];
-                                echo "<li class='list-group-item'><a href='". "Cast.php?Id=". $row['Id']."'>".$row['Name']."</a></li>";
->>>>>>> b1abb2744d04b4690ba5d654a74c95a0186ed357
+
                             }
                         } else{
                             // echo "empty";
                         }
-<<<<<<< HEAD
+
                        // $conn->close(); 
-=======
-                        $conn->close(); 
->>>>>>> b1abb2744d04b4690ba5d654a74c95a0186ed357
+
                     ?>
                     </ul>
                 </div>
@@ -163,21 +133,14 @@
                     <h3>Reviews:</h3>
                     <ul class="list-group">
                         <?php 
-<<<<<<< HEAD
+
                           //  $servername = "localhost";
                           //  $username = "root";
                            // $password = "";
                           //  $dbname = "MyNetflixList";
                             // Create connection
                           //  $conn = new mysqli($servername, $username, $password);
-=======
-                            $servername = "localhost";
-                            $username = "root";
-                            $password = "";
-                            $dbname = "MyNetflixList";
-                            // Create connection
-                            $conn = new mysqli($servername, $username, $password);
->>>>>>> b1abb2744d04b4690ba5d654a74c95a0186ed357
+
 
                             // Check connection
                             if (mysqli_connect_error()) {
@@ -206,11 +169,9 @@
                             } else{
                                 // echo "empty";
                             }
-<<<<<<< HEAD
+
                            // $conn->close(); 
-=======
-                            $conn->close(); 
->>>>>>> b1abb2744d04b4690ba5d654a74c95a0186ed357
+
                         ?>
                         
                     </ul>
