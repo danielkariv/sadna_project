@@ -6,8 +6,9 @@
    include 'header.php';
 ?>
 <div class="container panel">
-   
+<ul class="list-group">
 <?php
+
    if (isset ($_GET['searchtype']) &&$_GET["searchtype"]== "Users")
    {
       $search_text = $_GET['searchthis'];
@@ -86,7 +87,7 @@
       }
    }
    ?>
-
+   </ul>
 </div>
 </body>
 </html>

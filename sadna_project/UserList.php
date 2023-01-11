@@ -53,14 +53,7 @@
                 <div class="col-5">
                     <h5>Shows List:</h5>
                     <ul class="list-group">
-                        <?php  
-                            $servername = "localhost";
-                            $username = "root";
-                            $password = "";
-                            $dbname = "MyNetflixList";
-                            // Create connection
-                            $conn = new mysqli($servername, $username, $password);
-
+                        <?php
                             // Check connection
                             if (mysqli_connect_error()) {
                                 // TODO: redirect to 502 page? or do that it can't load anything?

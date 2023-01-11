@@ -7,12 +7,12 @@
     {
 		//if not found
 		  $found='False';
-      //  $servername = "localhost";
-      //  $username = "root";
-       // $password = "";
-      //  $dbname = "MyNetflixList";
-        // Create connection
-       // $conn = new mysqli($servername, $username, $password);
+		//  $servername = "localhost";
+		//  $username = "root";
+		// $password = "";
+		//  $dbname = "MyNetflixList";
+		// Create connection
+		// $conn = new mysqli($servername, $username, $password);
 
         // Check connection
         if (mysqli_connect_error()) {
@@ -62,6 +62,7 @@
 	<div class="row" >
 	     <h3>Works: </h3>
 		 <br>
+		 <ul class="list-group">
 		 <?php 
 		    $sql2= "SELECT DISTINCT *
               FROM MyNetflixList.Shows
@@ -73,11 +74,23 @@
 				 
 				 for ($i=0; $i< $result2->num_rows ;$i++ )
 				 {
-					  $row2 = $result2->fetch_assoc();
-					 echo '<a href="/sadna_project/Show.php?Id='. $row2['Id'].'"  >'.$row2['Title'].' </a>' ; 
+					$row2 = $result2->fetch_assoc();
+					//echo '<a href="/sadna_project/Show.php?Id='. $row2['Id'].'"  >'.$row2['Title'].' </a>' ; 
+					$title = $row2['Title'];
+					$poster = ($row2['Poster'] == NULL || $row2['Poster'] == 'N/A')? "public/no-poster.png" : $row2['Poster'];
+					echo "<li class='list-group-item'>
+						<a href='Show.php?Id=".$row2['Id']."'>
+							<div class='row'>
+								<div class='col-2'>
+									<img class='img-fluid' src='". $poster. "' alt='". "Poster for". $title."'>
+								</div>
+								<div class='col'>". $title ."</div>
+							</div>
+						</a>
+					</li>";
 				 }
-		   
 		 ?>
+		</ul>
 	 <div>
 	      
 	 </div>
