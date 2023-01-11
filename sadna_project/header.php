@@ -58,6 +58,7 @@
         if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
             echo 'Hello '  ;
             echo $_SESSION['username'];
+            echo '<a href="UserList.php?Username='.$_SESSION['username'].'">Profile</a>';
             echo '<a href="/sadna_project/Logout.php"  >log out </a>' ;  
             } 
         else
