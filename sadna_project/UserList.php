@@ -107,10 +107,17 @@
                             }
                             # echo "Connected successfully";
                             // Try to query first slider data
-                            $sql = "SELECT DISTINCT s.Id, s.Title, s.Poster, ss.StatusType
+                            $sql = "SELECT  a.Id, a.Title, a.Poster, a.StatusType, b.avg
+                                    FROM
+                                    (SELECT DISTINCT s.Id, s.Title, s.Poster, ss.StatusType
                                     FROM MyNetflixList.ShowStatus AS ss JOIN MyNetflixList.Shows AS s
                                     ON ss.ShowID = s.Id
-                                    WHERE Username LIKE '". $data_username. "'";
+                                    WHERE Username LIKE '". $data_username. "') as a
+                                    LEFT JOIN
+                                    (SELECT r.ShowID, AVG(r.Rating) as avg
+                                    FROM  MyNetflixList.Reviews as r
+                                    GROUP BY r.ShowID) as b
+                                    ON a.Id = b.ShowID;";
                             $result = $conn->query($sql);
                             if ($result->num_rows > 0){
                                 while($row = $result->fetch_assoc()){
@@ -140,18 +147,27 @@
 									{
 									$deleteshow="<a href='Delete.php?type=showitem&Id=".$row['Id']."&Before=".$_GET['Username']."'>delete </a>";
 									}
+                                    if ($row['avg'] != NULL){
+                                        $avgRating = $row['avg'];
+                                    }
+                                    else{
+                                        $avgRating = NULL;
+                                    }
                                     echo "<li class='list-group-item'>
                                             <div class='row'>
                                                 <div class='col-2'>
                                                     <img class='img-fluid' src='". $poster. "' alt='". "Poster for". $title."'>
                                                 </div>
-                                                <div class='col-5'><a href='Show.php?Id=".$row['Id']."' >". $title ."</a></div>
-                                                <div class='col-3'>
-                                                    " . $status."
-                                                </div>
-												<div class='col-2'>
-                                                    " . $deleteshow."
-                                                </div>
+                                                <div class='col-5'>
+                                                <a href='Show.php?Id=".$row['Id']."' >". $title ."</a>";
+                                                if ($avgRating != NULL) echo "<h6> Rating average: ".number_format($avgRating,1)."/5</h6>";
+                                    echo "  </div>
+                                            <div class='col-3'>
+                                                " . $status."
+                                            </div>
+                                            <div class='col-2'>
+                                                " . $deleteshow."
+                                            </div>
                                             </div>
                                         </li>";
                                 }
