@@ -37,7 +37,7 @@
 
 <nav class="navbar">
     <div class="col-4">
-        <a class="navbar-brand" href="/sadna_project/">My Netflix List</a>
+        <a class="navbar-brand" href="index.php">My Netflix List</a>
     </div>
     <div class="col-4">
         <form class="form-inline" style="margin:0px"  accept-charset="UTF-8" method="get">
@@ -59,7 +59,7 @@
             echo 'Hello '  ;
             echo $_SESSION['username'];
             echo '<a href="UserList.php?Username='.$_SESSION['username'].'">Profile</a>';
-            echo '<a href="/sadna_project/Logout.php"  >log out </a>' ;  
+            echo '<a href="Logout.php"  >log out </a>' ;  
             } 
         else
         { 

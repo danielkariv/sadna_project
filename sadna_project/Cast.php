@@ -75,7 +75,7 @@
 				 for ($i=0; $i< $result2->num_rows ;$i++ )
 				 {
 					$row2 = $result2->fetch_assoc();
-					//echo '<a href="/sadna_project/Show.php?Id='. $row2['Id'].'"  >'.$row2['Title'].' </a>' ; 
+					//echo '<a href="Show.php?Id='. $row2['Id'].'"  >'.$row2['Title'].' </a>' ; 
 					$title = $row2['Title'];
 					$poster = ($row2['Poster'] == NULL || $row2['Poster'] == 'N/A')? "public/no-poster.png" : $row2['Poster'];
 					echo "<li class='list-group-item'>

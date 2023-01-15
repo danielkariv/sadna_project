@@ -138,14 +138,14 @@
 									$deleteshow="";
 									if (($_GET['Username'] == $useronline))
 									{
-									$deleteshow="<a href='/sadna_project/Delete.php?type=showitem&Id=".$row['Id']."&Before=".$_GET['Username']."'>delete </a>";
+									$deleteshow="<a href='Delete.php?type=showitem&Id=".$row['Id']."&Before=".$_GET['Username']."'>delete </a>";
 									}
                                     echo "<li class='list-group-item'>
                                             <div class='row'>
                                                 <div class='col-2'>
                                                     <img class='img-fluid' src='". $poster. "' alt='". "Poster for". $title."'>
                                                 </div>
-                                                <div class='col-5'><a href='/sadna_project/Show.php?Id=".$row['Id']."' >". $title ."</a></div>
+                                                <div class='col-5'><a href='Show.php?Id=".$row['Id']."' >". $title ."</a></div>
                                                 <div class='col-3'>
                                                     " . $status."
                                                 </div>
@@ -215,12 +215,12 @@
 									$deletecommant="";
 									if (($_GET['Username'] == $useronline) ||  ($username== $useronline))
 									{
-										$deletecommant="<a href='/sadna_project/Delete.php?type=commant&Id=".$idcommant."&Before=".$_GET['Username']."'>delete </a>";
+										$deletecommant="<a href='Delete.php?type=commant&Id=".$idcommant."&Before=".$_GET['Username']."'>delete </a>";
 									}
                                     echo "<li class='list-group-item'>
                                             <div class='row'>
                                                 <div class='col-3'>
-                                                    <div class='col-12'><a href='/sadna_project/UserList.php?Username=".$username."'>". $username."</a></div>
+                                                    <div class='col-12'><a href='UserList.php?Username=".$username."'>". $username."</a></div>
                                                     <div class='col-12' style='font-size:12px' >". $date."</div>
                                                 </div>
                                                 <div class='col-8'>
