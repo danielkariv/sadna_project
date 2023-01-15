@@ -70,11 +70,11 @@
                 } 
 				
 				else {
-                    $errReVIEW = "You allredy posted" ;
+                    $errReVIEW = "You already posted your review!" ;
                 }
             }
             catch(Exception $e){
-               $errReVIEW = "You allredy posted" ;
+               $errReVIEW = "You already posted your review!"  ;
             }					 
           }
 		  
@@ -103,9 +103,18 @@
 </head>
 <body>
     <?php 
-
- 
-
+    if  (isset($_SESSION['username'])) {
+        $sql = "SELECT DISTINCT *
+        FROM MyNetflixList.ShowStatus as ss
+        WHERE ShowID = '". $_GET['Id'] ."' AND Username = '". $_SESSION['username']."';";
+        $result = $conn->query($sql);
+        
+        $isNotInList = $result->num_rows == 0;
+    } 
+    else {
+        $isNotInList = false;
+    }
+   
    ?>
     <!-- container for content-->
         <div class="container panel">
@@ -114,47 +123,60 @@
                     <img class="img-fluid" src=<?php echo '"'.$poster.'"'?> alt="...">
                 </div>
                 <div class="col-8">
-				    <?php if (!empty( $_SESSION['username'])) echo ' <input type="submit" name="addtolist" class="btn red-button btn-primary btn-block mb-4" value="Add to List" onclick="window.location.href = \'/sadna_project/Add_to_List.php?Id='.$_GET['Id'].'\';"/>' ?>
+				    <?php if (!empty( $_SESSION['username']) && $isNotInList) echo ' <input type="submit" name="addtolist" class="btn red-button btn-primary btn-block mb-4" value="Add to List" onclick="window.location.href = \'/sadna_project/Add_to_List.php?Id='.$_GET['Id'].'\';"/>' ?>
                     <h1><?php echo $title?></h1>
                     <h3><?php echo ($isMovie)? 'Movie':'TV Show';?>, Filmed at <?php echo ($country != NULL)?$country:'Unknown Location'?></h3>
                     <h3>Rated: <?php echo $rating?>, Duration: <?php echo $duration?>, Released <?php echo $releaseYear?></h3>
                     <h3>Description:</h3>
                     <p><?php echo $description?></p>
-					<div class="container ">
-  <form role="form" method="post"  <?php  if (empty( $_SESSION['username'])) echo "hidden" ?> >
-  
-    <div class="form-outline mb-4">
-       
-    </div>
-  
-   
-    <div class="form-outline mb-4">
-	 <label class="form-label" >Your rating:</label>
-		  <select class="custom-select col-3" name="rating" id="rating">
-                    <option selected value=1>1</option>
-                    <option value=2>2</option>
-					 <option value=3>3</option>
-					  <option value=4>4</option>
-					   <option value=5>5</option>
-                </select>
-          <br>
-        <label class="form-label" for="password">Your review:</label>
-		<br>
-         <textarea name="mytextarea" cols="50"></textarea>
-		 <br>
-		  
-		  <?php echo  $errReVIEW ?>
-    </div>
-  
-    <!-- Submit button -->
-    <input type="submit" name="submit" class="btn red-button btn-primary btn-block mb-4" value="Enter review"/>
-  
-    <!-- Register buttons -->
-    <div class="text-center">
-    
-    </div>
-  </form>
-</div>
+					<?php 
+                    $sql = "SELECT ShowID,AVG(Rating) as Avg FROM MyNetflixList.Reviews
+                            WHERE ShowID = " .$_GET['Id'] ."
+                            GROUP BY ShowID;";
+                    $result = $conn->query($sql);
+                    if($result->num_rows != 0){
+                        $row = $result->fetch_assoc();
+                        $avg = $row['Avg'];
+                        echo "<h3>User's average rating: ". number_format($avg,1) ."/5 </h3>";
+                    }
+                    $sql = "SELECT * FROM MyNetflixList.Reviews
+                            WHERE ShowID = ". $_GET['Id']." AND Username = '" . $_SESSION['username'] . "';";
+                    $result = $conn->query($sql);
+                    $isReviewed = $result->num_rows != 0
+                    ?>
+                    <div class="container ">
+                        <form role="form" method="post"  <?php  if (empty( $_SESSION['username']) || $isReviewed) echo "hidden" ?> >
+                    
+                        <div class="form-outline mb-4">
+                        
+                        </div>
+                        <div class="form-outline mb-4">
+                        <label class="form-label" >Your rating:</label>
+                            <select class="custom-select col-3" name="rating" id="rating">
+                                        <option selected value=1>1</option>
+                                        <option value=2>2</option>
+                                        <option value=3>3</option>
+                                        <option value=4>4</option>
+                                        <option value=5>5</option>
+                                    </select>
+                            <br>
+                            <label class="form-label" for="password">Your review:</label>
+                            <br>
+                            <textarea name="mytextarea" cols="50"></textarea>
+                            <br>
+                            
+                            <?php echo  $errReVIEW ?>
+                        </div>
+                    
+                        <!-- Submit button -->
+                        <input type="submit" name="submit" class="btn red-button btn-primary btn-block mb-4" value="Enter review"/>
+                    
+                        <!-- Register buttons -->
+                        <div class="text-center">
+                        
+                        </div>
+                    </form>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -180,7 +202,6 @@
                         // Try to query first slider data
 
                         $sql2 = "SELECT DISTINCT *
-
                                 FROM MyNetflixList.Persons
                                 WHERE Id = ANY
                                 (SELECT DISTINCT PersonID

@@ -61,11 +61,11 @@
                 } 
 				
 				else {
-                   $errCommant = "You allredy posted" ;
+                   $errCommant = "You already posted" ;
                 }
             }
             catch(Exception $e){
-              $errCommant = "You allredy posted" ;
+              $errCommant = "You already posted" ;
             }					 
           }
 		  
@@ -138,7 +138,7 @@
 									$deleteshow="";
 									if (($_GET['Username'] == $useronline))
 									{
-									$deleteshow=	"<a href='/sadna_project/Delete.php?type=showitem&Id=".$row['Id']."&Before=".$_GET['Username']."'>delete </a>";
+									$deleteshow="<a href='/sadna_project/Delete.php?type=showitem&Id=".$row['Id']."&Before=".$_GET['Username']."'>delete </a>";
 									}
                                     echo "<li class='list-group-item'>
                                             <div class='row'>
@@ -162,7 +162,7 @@
                 </div>
                 <div class="col-7">
 				
-		<form role="form" method="post"  <?php  if (empty( $_SESSION['username'])) echo "hidden" ?> >		
+		<form role="form" method="post"  <?php  if (empty($_SESSION['username']) || $_SESSION['username'] == $_GET['Username']) echo "hidden" ?> >		
         <label class="form-label" for="password">Your Commant:</label>
 		<br>
          <textarea name="mytextarea" cols="50"></textarea>

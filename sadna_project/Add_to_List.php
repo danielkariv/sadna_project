@@ -45,12 +45,12 @@
                 } 
 				
 				else {
-                    $errReVIEW = "You allredy posted" ;
+                    $errReVIEW = "You already posted" ;
 					 header("Location: /sadna_project/UserList.php?Username=".$_SESSION['username']); 
                 }
             }
             catch(Exception $e){
-               $errReVIEW = "You allredy posted" ;
+               $errReVIEW = "You already posted" ;
 			    header("Location: /sadna_project/UserList.php?Username=".$_SESSION['username']); 
             }					 
 			 }
@@ -88,17 +88,6 @@
 					 <option value=3>Dropped</option>
 					  <option value=4>Plan To Watch</option>
 					  
-                </select>
-       
-    </div>
-	<div class="form-outline mb-4">
-        <label class="form-label" for="Rating">Rating:</label>
-        <select class="custom-select col-3" name="rating" id="rating">
-                    <option selected value=1>1</option>
-                    <option value=2>2</option>
-					 <option value=3>3</option>
-					  <option value=4>4</option>
-					   <option value=5>5</option>
                 </select>
        
     </div>

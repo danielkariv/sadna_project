@@ -46,7 +46,7 @@
                 }
             }
             catch(Exception $e){
-               $errReVIEW = "You allredy posted" ;
+               $errReVIEW = "You already posted" ;
 			 
 			   $moveto="Location: /sadna_project/UserList.php?Username=".$_GET['Before']; 
             }
@@ -80,7 +80,7 @@
                 }
             }
             catch(Exception $e){
-               $errReVIEW = "You allredy posted" ;
+               $errReVIEW = "You already posted"  ;
 			
 			    $moveto="Location: /sadna_project/UserList.php?Username=".$_GET['Before']; 
             }
@@ -112,7 +112,7 @@
                 }
             }
             catch(Exception $e){
-               $errReVIEW = "You allredy posted" ;
+               $errReVIEW = "You already posted" ;
 			 
 			    $moveto="Location: /sadna_project/Show.php?Id=".$_GET['Before']; 
             }
