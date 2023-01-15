@@ -139,10 +139,15 @@
                         $avg = $row['Avg'];
                         echo "<h3>User's average rating: ". number_format($avg,1) ."/5 </h3>";
                     }
-                    $sql = "SELECT * FROM MyNetflixList.Reviews
-                            WHERE ShowID = ". $_GET['Id']." AND Username = '" . $_SESSION['username'] . "';";
-                    $result = $conn->query($sql);
-                    $isReviewed = $result->num_rows != 0
+                    if (!empty( $_SESSION['username'])){
+                        $sql = "SELECT * FROM MyNetflixList.Reviews
+                                WHERE ShowID = ". $_GET['Id']." AND Username = '" . $_SESSION['username'] . "';";
+                        $result = $conn->query($sql);
+                        $isReviewed = $result->num_rows != 0;
+                    }
+                    else{
+                        $isReviewed = true;
+                    }
                     ?>
                     <div class="container ">
                         <form role="form" method="post"  <?php  if (empty( $_SESSION['username']) || $isReviewed) echo "hidden" ?> >
