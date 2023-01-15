@@ -56,6 +56,10 @@
         $_SESSION['accountName']= $row['AccountName'];
 
        // $conn->close(); 
+        $sql = "UPDATE MyNetflixList.Users
+        SET LastOnline = now()
+        WHERE Username = '".$row['Username']."';";
+        $result = $conn->query($sql);
 
         header("Location: /sadna_project/index.php");
         die();
