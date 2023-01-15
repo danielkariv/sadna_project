@@ -53,9 +53,8 @@
 		   if (isset($_POST['mytextarea'])  && !empty($_POST['mytextarea']))
           {
                $review =$_POST['mytextarea'];
-			   $rating=$_POST['rating'];
-			    $sql2 = "INSERT INTO mynetflixlist.reviews (ShowID, Username, Message,Date,Rating )
-                    VALUES (".$_GET['Id'].",'".$_SESSION['username']."','".$review."', now(),". $rating.");";
+			    $sql2 = "INSERT INTO mynetflixlist.reviews (ShowID, Username, Message,Date)
+                    VALUES (".$_GET['Id'].",'".$_SESSION['username']."','".$review."', now());";
 					// $result2 = $conn->query($sql2);	
                      try {
                 if ($conn->query($sql2) === TRUE) 
@@ -130,7 +129,7 @@
                     <h3>Description:</h3>
                     <p><?php echo $description?></p>
 					<?php 
-                    $sql = "SELECT ShowID,AVG(Rating) as Avg FROM MyNetflixList.Reviews
+                    $sql = "SELECT ShowID,AVG(Rating) as Avg FROM MyNetflixList.ShowStatus
                             WHERE ShowID = " .$_GET['Id'] ."
                             GROUP BY ShowID;";
                     $result = $conn->query($sql);
@@ -151,20 +150,7 @@
                     ?>
                     <div class="container ">
                         <form role="form" method="post"  <?php  if (empty( $_SESSION['username']) || $isReviewed) echo "hidden" ?> >
-                    
                         <div class="form-outline mb-4">
-                        
-                        </div>
-                        <div class="form-outline mb-4">
-                        <label class="form-label" >Your rating:</label>
-                            <select class="custom-select col-3" name="rating" id="rating">
-                                        <option selected value=1>1</option>
-                                        <option value=2>2</option>
-                                        <option value=3>3</option>
-                                        <option value=4>4</option>
-                                        <option value=5>5</option>
-                                    </select>
-                            <br>
                             <label class="form-label" for="password">Your review:</label>
                             <br>
                             <textarea name="mytextarea" cols="50"></textarea>
@@ -270,9 +256,6 @@
 											 <div class='col-2' >
 											 ".$deleterew."
 											 </div>
-										   </div>
-										    <div class='row'>
-										   <h4>Rating: ". $row['Rating'] ."/5" . "</h4>
 										   </div>
 										    <div class='row'>
                                             <p>

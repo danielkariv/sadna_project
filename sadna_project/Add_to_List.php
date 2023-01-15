@@ -28,8 +28,8 @@
 			 {				 
 			 if (isset ($_POST['submit']))
 			 {
-				  $sql2 = "INSERT INTO mynetflixlist.showstatus (  ShowID,Username ,StatusType )
-                    VALUES (".$_GET['Id'].",'".$_SESSION['username']."',".$_POST['Status'].");";
+				  $sql2 = "INSERT INTO mynetflixlist.showstatus (  ShowID,Username ,StatusType, Rating)
+                    VALUES (".$_GET['Id'].",'".$_SESSION['username']."',".$_POST['Status'].",".$_POST['Rating'].");";
 					// $result2 = $conn->query($sql2);	
                      try {
                 if ($conn->query($sql2) === TRUE) 
@@ -89,7 +89,16 @@
 					  <option value=4>Plan To Watch</option>
 					  
                 </select>
-       
+    </div>
+    <div class="form-outline mb-4">
+    <label class="form-label" for="Rating">Rating:</label>
+    <select class="custom-select col-3" name="Rating" id="Rating">
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option selected value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                        </select>
     </div>
   
     <!-- Submit button -->

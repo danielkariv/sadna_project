@@ -28,7 +28,7 @@
                     // Try to query first slider data
                     $sql = "SELECT *
                     FROM MyNetflixList.Shows as s JOIN 
-                    (SELECT ShowID,AVG(Rating) as Avg FROM MyNetflixList.Reviews
+                    (SELECT ShowID,AVG(Rating) as Avg FROM MyNetflixList.ShowStatus
                     GROUP BY ShowID
                     ORDER BY Avg DESC) as avg
                     ON s.Id = avg.ShowID
