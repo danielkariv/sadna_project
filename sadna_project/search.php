@@ -13,9 +13,11 @@
    {
       $search_text = $_GET['searchthis'];
       echo '<h1>Users found for query: "'.$search_text.'"</h1>';
-      $sql = "SELECT DISTINCT *
+     $sql = "SELECT DISTINCT *
                FROM MyNetflixList.Users
                WHERE Username LIKE '%". $search_text ."%';";
+			   
+			   
       
       $result = $conn->query($sql);
       if ($result->num_rows == 1){
@@ -50,12 +52,16 @@
    {
       $search_text = $_GET['searchthis'];
       echo '<h1>Shows found for query: "'.$search_text.'"</h1>';
-      $sql = "SELECT * 
+    /*  $sql = "SELECT * 
                FROM MyNetflixList.Shows 
                WHERE MATCH (Title, Description) 
                AGAINST ('" . $search_text . "')
                ORDER BY Title ASC;";
-      
+      */
+	  $sql = "SELECT * 
+               FROM MyNetflixList.Shows 
+               WHERE Title  LIKE '%". $search_text ."%'
+               ORDER BY Title ASC;";
       $result = $conn->query($sql);
       if ($result->num_rows == 1){
          $row = $result->fetch_assoc();

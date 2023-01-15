@@ -84,7 +84,7 @@
             catch(Exception $e){
                 $errRegister = "Failed to register, username already taken.";
             }
-            $conn->close();
+            //$conn->close();
         }
     }
    

@@ -47,7 +47,7 @@
                     } else{
                         // echo "empty";
                     }
-                    $conn->close(); 
+                   // $conn->close(); 
                 ?>
                 </div>
             </div>
@@ -58,12 +58,12 @@
                 <h1>Lastest TV Shows From Israel</h1>
                 <div class="slider row flex-row flex-nowrap align-items-start" style="overflow-x: auto;">
                 <?php 
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $dbname = "MyNetflixList";
+                  //  $servername = "localhost";
+                  //  $username = "root";
+                   // $password = "";
+                  //  $dbname = "MyNetflixList";
                     // Create connection
-                    $conn = new mysqli($servername, $username, $password);
+                  //  $conn = new mysqli($servername, $username, $password);
 
                     // Check connection
                     if (mysqli_connect_error()) {
@@ -94,7 +94,7 @@
                     } else{
                         // echo "empty";
                     }
-                    $conn->close(); 
+                  //  $conn->close(); 
                 ?>
             </div>
         </div>
@@ -139,7 +139,7 @@
                     } else{
                         // echo "empty";
                     }
-                    $conn->close(); 
+                   // $conn->close(); 
                 ?>
             </div>
         </div>
