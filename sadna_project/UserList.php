@@ -24,7 +24,7 @@
         // Try to query first slider data
         $sql = "SELECT DISTINCT *
                 FROM MyNetflixList.Users
-                WHERE Username = '". $_GET['Username'] ."';";
+                WHERE Username = '". $conn ->real_escape_string($_GET['Username']) ."';";
         $result = $conn->query($sql);
         if ($result->num_rows > 0){
             $row = $result->fetch_assoc();
@@ -46,7 +46,7 @@
                $review =$_POST['mytextarea'];
 			  // $rating=$_POST['rating'];
 			    $sql2 = "INSERT INTO mynetflixlist.comments (UsernameWall, UsernamePost, Message,Date,isShown )
-                    VALUES ('".$_GET['Username']."','".$_SESSION['username']."','".$review."', now(),True);";
+                    VALUES ('".$_GET['Username']."','".$conn ->real_escape_string($_SESSION['username'])."','".$conn ->real_escape_string($review)."', now(),True);";
 					// $result2 = $conn->query($sql2);	
                      try {
                 if ($conn->query($sql2) === TRUE) 
@@ -110,7 +110,7 @@
                             $sql = "SELECT DISTINCT s.Id, s.Title, s.Poster, ss.StatusType, ss.Rating
                                     FROM MyNetflixList.ShowStatus AS ss JOIN MyNetflixList.Shows as s
                                     ON s.Id = ss.ShowID
-                                    WHERE Username LIKE '". $data_username. "'";
+                                    WHERE Username LIKE '". $conn ->real_escape_string($data_username). "'";
                             $result = $conn->query($sql);
                             if ($result->num_rows > 0){
                                 while($row = $result->fetch_assoc()){
@@ -148,7 +148,7 @@
                                                 </div>
                                                 <div class='col-5'>
                                                 <a href='Show.php?Id=".$row['Id']."' >". $title ."</a>";
-                                                if ($avgRating != NULL) echo "<h6>Rating: ".number_format($avgRating,1)."/5</h6>";
+                                                if ($avgRating != NULL) echo "<h6>Rating: ".(int)number_format($avgRating,1)."/10</h6>";
                                     echo "  </div>
                                             <div class='col-3'>
                                                 " . $status."
@@ -203,7 +203,7 @@
                                     WHERE c.UsernameWall LIKE 'abc'";
 									*/
 								$sql3 = "SELECT  *
-                                    FROM MyNetflixList.Comments WHERE UsernameWall='".$_GET['Username']."';";	
+                                    FROM MyNetflixList.Comments WHERE UsernameWall='".$conn ->real_escape_string($_GET['Username'])."';";	
 								
                             $result3 = $conn->query($sql3);
                             if ($result3->num_rows > 0){

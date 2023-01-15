@@ -15,7 +15,7 @@
       echo '<h1>Users found for query: "'.$search_text.'"</h1>';
      $sql = "SELECT DISTINCT *
                FROM MyNetflixList.Users
-               WHERE Username LIKE '%". $search_text ."%';";
+               WHERE Username LIKE '%". $conn ->real_escape_string($search_text) ."%';";
 			   
 			   
       
@@ -60,7 +60,7 @@
       */
 	  $sql = "SELECT * 
                FROM MyNetflixList.Shows 
-               WHERE Title  LIKE '%". $search_text ."%'
+               WHERE Title  LIKE '%". $conn ->real_escape_string($search_text) ."%'
                ORDER BY Title ASC;";
       $result = $conn->query($sql);
       if ($result->num_rows == 1){

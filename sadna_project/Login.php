@@ -48,7 +48,7 @@
       // Try to query first slider data
       $sql = "SELECT DISTINCT *
               FROM MyNetflixList.Users
-              WHERE Username = '". $_POST['user'] ."' AND Password = '". $_POST['password'] ."';";
+              WHERE Username = '". $conn ->real_escape_string($_POST['user']) ."' AND Password = '". $conn ->real_escape_string($_POST['password']) ."';";
       $result = $conn->query($sql);
       if ($result->num_rows > 0){
         $row = $result->fetch_assoc();
@@ -92,7 +92,7 @@
     <p style="color:red;"><?php echo $errLogin;?></p>
     <!-- Register buttons -->
     <div class="text-center">
-      <p>Not a member? <a href="#!">Sign Up</a></p>
+      <p>Not a member? <a href="Register.php">Sign Up</a></p>
     </div>
   </form>
 </div>

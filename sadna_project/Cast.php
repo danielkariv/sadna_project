@@ -69,7 +69,7 @@
               WHERE Id = ANY
                 (SELECT DISTINCT ShowID
                FROM MyNetflixList.Cast
-                WHERE PersonID = ".$_GET['Id'].");";
+                WHERE PersonID = ".$conn ->real_escape_string($_GET['Id']).");";
 				 $result2 = $conn->query($sql2);
 				 
 				 for ($i=0; $i< $result2->num_rows ;$i++ )

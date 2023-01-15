@@ -17,14 +17,14 @@
 	      
 	   if (isset($_GET['Id']))
 	   {
-		    $sql="SELECT  *  FROM MyNetflixList.Comments WHERE Id=".$_GET['Id'].";";
+		    $sql="SELECT  *  FROM MyNetflixList.Comments WHERE Id=".$conn ->real_escape_string($_GET['Id']).";";
 			  $result = $conn->query($sql);
                             if ($result->num_rows > 0){
 								$row = $result->fetch_assoc();
 								
 			   if ($row['UsernameWall']== $_SESSION['username'] || $row['UsernamePost']== $_SESSION['username'])
 			   {
-		     $sql2 = "DELETE FROM MyNetflixList.Comments WHERE Id=".$_GET['Id'].";";
+		     $sql2 = "DELETE FROM MyNetflixList.Comments WHERE Id=".$conn ->real_escape_string($_GET['Id']).";";
 					// $result2 = $conn->query($sql2);	
                      try {
                 if ($conn->query($sql2) === TRUE) 
@@ -59,7 +59,7 @@
   {
 	   if (isset($_GET['Id']))
 	   {
-		      $sql="DELETE FROM MyNetflixList.ShowStatus WHERE ShowID=".$_GET['Id']." AND Username='".$useronline."' ;";
+		      $sql="DELETE FROM MyNetflixList.ShowStatus WHERE ShowID=".$conn ->real_escape_string($_GET['Id'])." AND Username='".$conn ->real_escape_string($useronline)."' ;";
 			    try {
                 if ($conn->query($sql) === TRUE) 
 				{
@@ -91,7 +91,7 @@
   {
 	   if (isset($_GET['Id']))
 	   {
-		      $sql="DELETE FROM MyNetflixList.Reviews WHERE ShowID=".$_GET['Id']." AND Username='".$useronline."' ;";
+		      $sql="DELETE FROM MyNetflixList.Reviews WHERE ShowID=".$conn ->real_escape_string($_GET['Id'])." AND Username='".$conn ->real_escape_string($useronline)."' ;";
 			    try {
                 if ($conn->query($sql) === TRUE) 
 				{

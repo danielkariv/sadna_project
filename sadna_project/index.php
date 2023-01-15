@@ -7,7 +7,7 @@
         <div class="container panel">
             <!--- Popular shows slider-->
             <div class="container">
-                <h1>2021 Highly Reviewed Movies</h1>
+                <h1> Highly Recommended Movies</h1>
                 <div class="slider row flex-row flex-nowrap align-items-start" style="overflow-x: auto;">
                 <?php 
 
@@ -26,13 +26,22 @@
                     }
                     # echo "Connected successfully";
                     // Try to query first slider data
-                    $sql = "SELECT *
+                /*    $sql = "SELECT *
                     FROM MyNetflixList.Shows as s JOIN 
                     (SELECT ShowID,AVG(Rating) as Avg FROM MyNetflixList.ShowStatus
                     GROUP BY ShowID
                     ORDER BY Avg DESC) as avg
                     ON s.Id = avg.ShowID
                     WHERE ReleaseYear = 2021 AND isMovie = True 
+                    LIMIT 20;";
+				*/	
+					 $sql = "SELECT *
+                    FROM MyNetflixList.Shows as s JOIN 
+                    (SELECT ShowID,AVG(Rating) as Avg FROM MyNetflixList.ShowStatus
+                    GROUP BY ShowID
+                    ORDER BY Avg DESC) as avg
+                    ON s.Id = avg.ShowID
+                    WHERE  isMovie = True 
                     LIMIT 20;";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0){
@@ -107,12 +116,12 @@
                 <h1>Lastest Movies From Israel</h1>
                 <div class="slider row flex-row flex-nowrap align-items-start" style="overflow-x: auto;">
                 <?php 
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $dbname = "MyNetflixList";
+                  //  $servername = "localhost";
+                  //  $username = "root";
+                  //  $password = "";
+                   // $dbname = "MyNetflixList";
                     // Create connection
-                    $conn = new mysqli($servername, $username, $password);
+                  //  $conn = new mysqli($servername, $username, $password);
 
                     // Check connection
                     if (mysqli_connect_error()) {
@@ -151,12 +160,12 @@
                 <h1>Lastest Movies From USA</h1>
                 <div class="slider row flex-row flex-nowrap align-items-start" style="overflow-x: auto;">
                 <?php 
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $dbname = "MyNetflixList";
+                 //   $servername = "localhost";
+                 //   $username = "root";
+                  //  $password = "";
+                  //  $dbname = "MyNetflixList";
                     // Create connection
-                    $conn = new mysqli($servername, $username, $password);
+                 //   $conn = new mysqli($servername, $username, $password);
 
                     // Check connection
                     if (mysqli_connect_error()) {

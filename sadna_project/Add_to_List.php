@@ -12,7 +12,7 @@
     {
 		$sql = "SELECT DISTINCT *
                 FROM MyNetflixList.Shows as s
-                WHERE Id = '". $_GET['Id'] ."';";
+                WHERE Id = '". $conn ->real_escape_string($_GET['Id']) ."';";
         $result = $conn->query($sql);
         if ($result->num_rows > 0){
 			$row = $result->fetch_assoc();
@@ -29,7 +29,7 @@
 			 if (isset ($_POST['submit']))
 			 {
 				  $sql2 = "INSERT INTO mynetflixlist.showstatus (  ShowID,Username ,StatusType, Rating)
-                    VALUES (".$_GET['Id'].",'".$_SESSION['username']."',".$_POST['Status'].",".$_POST['Rating'].");";
+                    VALUES (".$conn ->real_escape_string($_GET['Id']).",'".$conn ->real_escape_string($_SESSION['username'])."',".$conn ->real_escape_string($_POST['Status']).",".$conn ->real_escape_string($_POST['Rating']).");";
 					// $result2 = $conn->query($sql2);	
                      try {
                 if ($conn->query($sql2) === TRUE) 
@@ -95,9 +95,14 @@
     <select class="custom-select col-3" name="Rating" id="Rating">
                             <option value=1>1</option>
                             <option value=2>2</option>
-                            <option selected value=3>3</option>
+                            <option  value=3>3</option>
                             <option value=4>4</option>
-                            <option value=5>5</option>
+                            <option selected value=5>5</option>
+							<option  value=6>6</option>
+                            <option value=7>7</option>
+                            <option value=8>8</option>
+							<option value=9>9</option>
+                            <option value=10>10</option>
                         </select>
     </div>
   

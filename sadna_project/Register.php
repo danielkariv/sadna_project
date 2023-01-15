@@ -66,7 +66,7 @@
             // Try to query first slider data
 
             $sql = "INSERT INTO MyNetflixList.Users (Username, Password, AccountName, RegisterDate, LastOnline)
-                    VALUES ('". $username ."','". $password ."','". $accountName . "', now(),now());";
+                    VALUES ('". $conn ->real_escape_string($username)."','". $conn ->real_escape_string($password) ."','". $conn ->real_escape_string($accountName) . "', now(),now());";
 				//echo $sql;
 
             try {
@@ -126,7 +126,7 @@
               <p style="color:red;"><?php echo $errRegister?></p>
                 <!-- Login buttons -->
                 <div class="text-center">
-                    <p>Get a member already? <a href="#!">Login</a></p>
+                    <p>Get a member already? <a href="Login.php">Login</a></p>
                 </div>
                 </form>
         </div>

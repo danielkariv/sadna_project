@@ -54,7 +54,7 @@
           {
                $review =$_POST['mytextarea'];
 			    $sql2 = "INSERT INTO mynetflixlist.reviews (ShowID, Username, Message,Date)
-                    VALUES (".$_GET['Id'].",'".$_SESSION['username']."','".$review."', now());";
+                    VALUES (".$conn ->real_escape_string($_GET['Id']).",'".$conn ->real_escape_string($_SESSION['username'])."','".$conn ->real_escape_string($review)."', now());";
 					// $result2 = $conn->query($sql2);	
                      try {
                 if ($conn->query($sql2) === TRUE) 
@@ -105,7 +105,7 @@
     if  (isset($_SESSION['username'])) {
         $sql = "SELECT DISTINCT *
         FROM MyNetflixList.ShowStatus as ss
-        WHERE ShowID = '". $_GET['Id'] ."' AND Username = '". $_SESSION['username']."';";
+        WHERE ShowID = '". $conn ->real_escape_string($_GET['Id']) ."' AND Username = '". $conn ->real_escape_string($_SESSION['username'])."';";
         $result = $conn->query($sql);
         
         $isNotInList = $result->num_rows == 0;
@@ -136,11 +136,11 @@
                     if($result->num_rows != 0){
                         $row = $result->fetch_assoc();
                         $avg = $row['Avg'];
-                        echo "<h3>User's average rating: ". number_format($avg,1) ."/5 </h3>";
+                        echo "<h3>User's average rating: ". number_format($avg,1) ."/10 </h3>";
                     }
                     if (!empty( $_SESSION['username'])){
                         $sql = "SELECT * FROM MyNetflixList.Reviews
-                                WHERE ShowID = ". $_GET['Id']." AND Username = '" . $_SESSION['username'] . "';";
+                                WHERE ShowID = ".$conn ->real_escape_string( $_GET['Id'])." AND Username = '" . $conn ->real_escape_string($_SESSION['username']) . "';";
                         $result = $conn->query($sql);
                         $isReviewed = $result->num_rows != 0;
                     }
@@ -197,7 +197,7 @@
                                 WHERE Id = ANY
                                 (SELECT DISTINCT PersonID
                                 FROM MyNetflixList.Cast
-                                WHERE ShowID = " . $showId. ");";
+                                WHERE ShowID = " . $conn ->real_escape_string($showId). ");";
 
                         $result2 = $conn->query($sql2);
                         if ($result2->num_rows > 0){
@@ -237,7 +237,7 @@
                             // TODO: maybe sort it by date? need reviews first to check it.
                             $sql = "SELECT DISTINCT *
                                     FROM MyNetflixList.Reviews
-                                    WHERE ShowID = " . $showId. ";";
+                                    WHERE ShowID = " . $conn ->real_escape_string($showId). ";";
                             $result = $conn->query($sql);
                             if ($result->num_rows > 0){
                                 while($row = $result->fetch_assoc()){
